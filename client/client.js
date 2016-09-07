@@ -12,7 +12,6 @@ let initialState = {
   }]
 }
 
-<<<<<<< HEAD
 // configure and create the store
 let store = configureStore(initialState) // []
 
