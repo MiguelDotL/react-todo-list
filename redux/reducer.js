@@ -19,10 +19,34 @@ let reducer = function(state, action) {
         }, ...state.todos]
       })
 <<<<<<< HEAD
+<<<<<<< HEAD
     default:
 =======
     default: 
 >>>>>>> 25f1b3197b0dcb0f90c693794b5cf868fb61f2a1
+=======
+    case 'COMPLETE_TODO':
+      return Object.assign({}, state, {
+        todos: state.todos.map((todo) => {
+          return todo.id === action.id ?
+            Object.assign({}, todo, {completed: !todo.completed}) : todo
+        })
+      })
+    case 'DELETE_TODO':
+      return Object.assign({}, state, {
+        todos: state.todos.filter((todo) => {
+          return todo.id !== action.id
+        })
+      })
+      case 'CREATE_USER_ID':
+        return Object.assign({}, state, {
+          user: {
+            username: state.user.username,
+            id: action.id
+          }
+        })
+    default:
+>>>>>>> my-part-9
       return state;
   }
 }
